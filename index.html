@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./index.css" rel="stylesheet">
+    <script src="./app.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="main_div">
+        <!-- <nav>
+            <div class="nav-bar">
+                &#128516
+                <h1>Hello Guys!!!!</h1>
+            </div>
+        </nav> -->
+        <form id="myForm">
+            <label>
+               <h1>Enter the Website URL</h1> 
+            </label for="inputField">
+            <input type="text" id="inputField">
+            <button type="submit">Submit</button>
+        </form>
+    
+        <div class="card">
+            <div class="inner">
+                <h1>Welcome!!!</h1>
+            </div>
+        </div>
+    </div>
+   
+    <script>
+    document.getElementById('myForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const inputValue = document.getElementById('inputField').value;
+    sendData(inputValue);
+  });
+  
+        function sendData(value){
+            fetch('/submit',{
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({value:value})
+            })
+            .then(res=>res.json())
+            .then(data=>console.log(data))
+            .catch(error=>console.error('Error:',error));
+        }
+    </script>
+</body>
+</html>

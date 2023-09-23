@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "chromedriver": "^117.0.2",
+    "express": "^4.18.2",
+    "selenium-webdriver": "^4.12.0"
+  },
+  "name": "automated-testing",
+  "version": "1.0.0",
+  "description": "Automated testing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mahima Gupta",
+  "license": "ISC"
+}
